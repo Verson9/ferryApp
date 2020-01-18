@@ -10,7 +10,6 @@ public class AskingIfYouHaveAnyVehicleScreen implements Screen {
     private final Scanner sc = new Scanner(System.in);
 
     private void redirectingToTheVehicleSelectionPageOrDisplayingTheTicketPriceWhenTheUserIsNotTakingTheCar(User user) {
-
         switch ( sc.nextLine().toLowerCase() ) {
             case ("tak") -> {
                 System.out.println("Jaki pojazd zabierasz?");
@@ -24,13 +23,17 @@ public class AskingIfYouHaveAnyVehicleScreen implements Screen {
                 choosingVehicleTypeScreen.display(user);
             }
             case ("nie") -> System.out.println("Cena rejsu to: " + user.getSummaryPriceForThisPersonTickets());
+            case ("saldo") -> {
+                ScreenUtils.displayBalance(user);
+                redirectingToTheVehicleSelectionPageOrDisplayingTheTicketPriceWhenTheUserIsNotTakingTheCar(user);
+            }
             default -> redirectingToTheVehicleSelectionPageOrDisplayingTheTicketPriceWhenTheUserIsNotTakingTheCar(user);
         }
     }
 
     @Override
     public void display(User user) {
-        System.out.println("Czy bierzesz ze sobą pojazd?");
+        System.out.println("Czy bierzesz ze sobą pojazd?\nW następnych krokach wpisz 'saldo' jeśli chesz wyświetlić aktualne saldo.");
         redirectingToTheVehicleSelectionPageOrDisplayingTheTicketPriceWhenTheUserIsNotTakingTheCar(user);
     }
 }

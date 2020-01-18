@@ -11,11 +11,15 @@ public class ChoosingVehicleTypeScreen implements Screen {
 
     @Override
     public void display(User user) {
-        switch ( sc.nextInt() ) {
-            case 1 -> displayCarTicketPriceAddItToUserVehicleTicketPriceAndDisplayFerrySummaryPrice(user);
-            case 2 -> displayBikeTicketPriceAddItToUserVehicleTicketPriceAndDisplayFerrySummaryPrice(user);
-            case 3 -> displayBusTicketPriceAddItToUserVehicleTicketPriceAndDisplayFerrySummaryPrice(user);
-            case 4 -> displayTruckTicketPriceAddItToUserVehicleTicketPriceAndDisplayFerrySummaryPrice(user);
+        switch ( sc.nextLine() ) {
+            case "1" -> displayCarTicketPriceAddItToUserVehicleTicketPriceAndDisplayFerrySummaryPrice(user);
+            case "2" -> displayBikeTicketPriceAddItToUserVehicleTicketPriceAndDisplayFerrySummaryPrice(user);
+            case "3" -> displayBusTicketPriceAddItToUserVehicleTicketPriceAndDisplayFerrySummaryPrice(user);
+            case "4" -> displayTruckTicketPriceAddItToUserVehicleTicketPriceAndDisplayFerrySummaryPrice(user);
+            case "saldo" -> {
+                ScreenUtils.displayBalance(user);
+                display(user);
+            }
             default -> {
                 System.out.println("Błędnie wprowadzony wybór");
                 display(user);
