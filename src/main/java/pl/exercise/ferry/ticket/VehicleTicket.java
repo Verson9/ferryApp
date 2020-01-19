@@ -13,6 +13,14 @@ public abstract class VehicleTicket implements Ticket {
     this.owner = owner;
   }
 
+  VehicleType getVehicleType(){
+    return this.vehicleType;
+  }
+
+  String getOwner(){
+    return  this.owner;
+  }
+
   @Override
   public BigDecimal getPrice() {
     return BigDecimal.ZERO;

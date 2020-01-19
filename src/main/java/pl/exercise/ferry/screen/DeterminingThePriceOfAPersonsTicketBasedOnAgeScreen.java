@@ -34,28 +34,24 @@ public class DeterminingThePriceOfAPersonsTicketBasedOnAgeScreen implements Scre
     private void displayPriceForChild(User user) {
         System.out.println("Cena twojego biletu to " + PaxType.CHILD.getPrice() + "\nTyp biletu to: " + PaxType.CHILD.name());
         user.setPersonTicketPrice(PaxType.CHILD.getPrice() + user.getPersonTicketPrice());
-        AskingIfYouHaveAnyVehicleScreen askingIfYouHaveAnyVehicleScreen = new AskingIfYouHaveAnyVehicleScreen();
-        askingIfYouHaveAnyVehicleScreen.display(user);
+
     }
 
     private void displayPriceForYoung(User user) {
         System.out.println("Cena twojego biletu to " + PaxType.YOUNG.getPrice() + "\nTyp biletu to: " + PaxType.YOUNG.name());
         user.setPersonTicketPrice(PaxType.YOUNG.getPrice() + user.getPersonTicketPrice());
-        AskingIfYouHaveAnyVehicleScreen askingIfYouHaveAnyVehicleScreen = new AskingIfYouHaveAnyVehicleScreen();
-        askingIfYouHaveAnyVehicleScreen.display(user);
+
     }
 
     private void displayPriceForAdult(User user) {
         System.out.println("Cena twojego biletu to " + PaxType.ADULT.getPrice() + "\nTyp biletu to: " + PaxType.ADULT.name());
         user.setPersonTicketPrice(PaxType.ADULT.getPrice() + user.getPersonTicketPrice());
-        AskingIfYouHaveAnyVehicleScreen askingIfYouHaveAnyVehicleScreen = new AskingIfYouHaveAnyVehicleScreen();
-        askingIfYouHaveAnyVehicleScreen.display(user);
+
     }
 
     private void displayPriceForSenior(User user) {
         System.out.println("Cena twojego biletu to " + PaxType.SENIOR.getPrice() + "\nTyp biletu to: " + PaxType.SENIOR.name());
         user.setPersonTicketPrice(PaxType.SENIOR.getPrice() + user.getPersonTicketPrice());
-        AskingIfYouHaveAnyVehicleScreen askingIfYouHaveAnyVehicleScreen = new AskingIfYouHaveAnyVehicleScreen();
-        askingIfYouHaveAnyVehicleScreen.display(user);
+
     }
 }

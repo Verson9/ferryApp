@@ -43,7 +43,7 @@ public class ChoosingVehicleTypeScreen implements Screen {
 
     void displayBusTicketPriceAddItToUserVehicleTicketPriceAndDisplayFerrySummaryPrice(User user) {
         System.out.println("Wybrany pojazd to " + VehicleType.BUS.getPolishName());
-        int busLength = getBusLength();
+        int busLength = setBusLength();
         System.out.println("Koszt biletu na autobus to: " + VehicleType.BUS.getPrice() * busLength);
         user.setVehicleTicketPrice(user.getVehicleTicketPrice() + VehicleType.BUS.getPrice() * busLength);
         displayFerryCostForThisPerson(user);
@@ -51,18 +51,18 @@ public class ChoosingVehicleTypeScreen implements Screen {
 
     void displayTruckTicketPriceAddItToUserVehicleTicketPriceAndDisplayFerrySummaryPrice(User user) {
         System.out.println("Wybrany pojazd to " + VehicleType.TRUCK.getPolishName());
-        int truckMass = getTruckMass();
+        int truckMass = setTruckMass();
         displayTruckTicketPriceByMass(truckMass);
         user.setVehicleTicketPrice(user.getVehicleTicketPrice() + VehicleType.TRUCK.getPrice() * truckMass);
         displayFerryCostForThisPerson(user);
     }
 
-    private int getBusLength() {
+    private int setBusLength() {
         System.out.println("Podaj długość autobusu");
         return sc.nextInt();
     }
 
-    private int getTruckMass() {
+    private int setTruckMass() {
         System.out.println("Podaj masę ciężarówki w tonach");
         return sc.nextInt();
     }
